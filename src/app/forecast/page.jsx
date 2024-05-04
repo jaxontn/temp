@@ -49,7 +49,7 @@ const Home = () => {
                 }
             } else {
 
-                if(data.data.length > 0){      
+                if(data.length > 0){      
                     // Set city text content
                     const cityElement = document.getElementById("city-id");
                     if (cityElement) {
@@ -189,29 +189,29 @@ const Home = () => {
                     <p style={styles.cities}>City Name</p>
                     <h1>Current Weather</h1>
                     <div style={styles.weather}>
-                        <img src="/assets/images/question-sign.png" alt="storm-img" class="weather-icon" />
+                        <img src="/assets/images/question-sign.png" alt="storm-img" className="weather-icon" />
                         <p style={styles.current}>-</p>
                     </div>
                     
-                    <div class="col">
+                    <div className="col">
                         <div style={styles.weatherInfo}>
                             <div style={styles.thermometer}>
                                 <img src="/assets/images/weather/thermometer.png" alt="thermometer" width="50" height="50" />
-                                <p class="temp">-</p>
+                                <p className="temp">-</p>
                             </div> 
                             <div style={styles.windy}>
                                 <img src="/assets/images/weather/windy.png" alt="windy" />
-                                <p class="wind">-</p>
+                                <p className="wind">-</p>
                             </div>
                         </div>
                         <div style={styles.weatherInfo}>
                             <div style={styles.humidity}>
                                 <img src="/assets/images/weather/humidity.png" alt="humidity" />
-                                <p class="humid">-</p>
+                                <p className="humid">-</p>
                             </div>
                             <div style={styles.pressure}>
                                 <img src="/assets/images/weather/pressure.png" alt="pressure" />
-                                <p class="press">-</p>
+                                <p className="press">-</p>
                             </div>
                         </div>
                     </div>
@@ -220,46 +220,46 @@ const Home = () => {
 
                 <div style={styles.forecast}>
                     <h1>Forecast</h1>
-                    <p class="date-text">Date</p>
+                    <p className="date-text">Date</p>
                     <div style={styles.gridContainer}>
                         <div style={styles.gridItem}>
-                            <p class="time-now">12:00am</p>
-                            <p class="time-now-2">3:00am</p>
-                            <p class="time-now-3">6.00am</p>
-                            <p class="time-now-4">9.00am</p>
-                            <p class="time-now-5">12.00pm</p>
-                            <p class="time-now-6">3.00pm</p>
-                            <p class="time-now-7">6.00pm</p>
-                            <p class="time-now-8">9.00pm</p>
-                            <p class="time-now-9">12.00am (Next day)</p>
+                            <p className="time-now">12:00am</p>
+                            <p className="time-now-2">3:00am</p>
+                            <p className="time-now-3">6.00am</p>
+                            <p className="time-now-4">9.00am</p>
+                            <p className="time-now-5">12.00pm</p>
+                            <p className="time-now-6">3.00pm</p>
+                            <p className="time-now-7">6.00pm</p>
+                            <p className="time-now-8">9.00pm</p>
+                            <p className="time-now-9">12.00am (Next day)</p>
                         </div>
 
                         <div style={styles.gridItem}>
-                            <img src="/assets/images/question-sign.png" alt="weathericon" class="grid-item-icon" />
+                            <img src="/assets/images/question-sign.png" alt="weathericon" className="grid-item-icon" />
                         </div>
                         <div style={styles.gridItem}>
-                            <img src="/assets/images/question-sign.png" alt="weathericon" class="grid-item-icon-2" />
+                            <img src="/assets/images/question-sign.png" alt="weathericon" className="grid-item-icon-2" />
                         </div>
                         <div style={styles.gridItem}>
-                            <img src="/assets/images/question-sign.png" alt="weathericon" class="grid-item-icon-3" />
+                            <img src="/assets/images/question-sign.png" alt="weathericon" className="grid-item-icon-3" />
                         </div>
                         <div style={styles.gridItem}>
-                            <img src="/assets/images/question-sign.png" alt="weathericon" class="grid-item-icon-4" />
+                            <img src="/assets/images/question-sign.png" alt="weathericon" className="grid-item-icon-4" />
                         </div>
                         <div style={styles.gridItem}>
-                            <img src="/assets/images/question-sign.png" alt="weathericon" class="grid-item-icon-5" />
+                            <img src="/assets/images/question-sign.png" alt="weathericon" className="grid-item-icon-5" />
                         </div>
                         <div style={styles.gridItem}>
-                            <img src="/assets/images/question-sign.png" alt="weathericon" class="grid-item-icon-6" />
+                            <img src="/assets/images/question-sign.png" alt="weathericon" className="grid-item-icon-6" />
                         </div>
                         <div style={styles.gridItem}>
-                            <img src="/assets/images/question-sign.png" alt="weathericon" class="grid-item-icon-7" />
+                            <img src="/assets/images/question-sign.png" alt="weathericon" className="grid-item-icon-7" />
                         </div>
                         <div style={styles.gridItem}>
-                            <img src="/assets/images/question-sign.png" alt="weathericon" class="grid-item-icon-8" />
+                            <img src="/assets/images/question-sign.png" alt="weathericon" className="grid-item-icon-8" />
                         </div>
                         <div style={styles.gridItem}>
-                            <img src="/assets/images/question-sign.png" alt="weathericon" class="grid-item-icon-9" />
+                            <img src="/assets/images/question-sign.png" alt="weathericon" className="grid-item-icon-9" />
                         </div>
 
                         <div style={styles.gridItem}>-</div>
@@ -289,31 +289,31 @@ const Home = () => {
                         </thead>
                         <tbody>
                             <tr>
-                            <td class="forecast-icon">
+                            <td className="forecast-icon">
                                 <img src="/assets/images/question-sign.png" alt="weathericon" width="40px" />
                             </td>
-                            <td class="forecast-icon">
+                            <td className="forecast-icon">
                                 <img src="/assets/images/question-sign.png" alt="weathericon" width="40px" />
                             </td>
-                            <td class="forecast-icon">
+                            <td className="forecast-icon">
                                 <img src="/assets/images/question-sign.png" alt="weathericon" width="40px" />
                             </td>
-                            <td class="forecast-icon">
+                            <td className="forecast-icon">
                                 <img src="/assets/images/question-sign.png" alt="weathericon" width="40px" />
                             </td>
-                            <td class="forecast-icon">
+                            <td className="forecast-icon">
                                 <img src="/assets/images/question-sign.png" alt="weathericon" width="40px" />
                             </td>
-                            <td class="forecast-icon">
+                            <td className="forecast-icon">
                                 <img src="/assets/images/question-sign.png" alt="weathericon" width="40px" />
                             </td>
-                            <td class="forecast-icon">
+                            <td className="forecast-icon">
                                 <img src="/assets/images/question-sign.png" alt="weathericon" width="40px" />
                             </td>
-                            <td class="forecast-icon">
+                            <td className="forecast-icon">
                                 <img src="/assets/images/question-sign.png" alt="weathericon" width="40px" />
                             </td>
-                            <td class="forecast-icon">
+                            <td className="forecast-icon">
                                 <img src="/assets/images/question-sign.png" alt="weathericon" width="40px" />
                             </td>
                             </tr>
