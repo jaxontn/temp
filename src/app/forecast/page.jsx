@@ -31,9 +31,9 @@ const Home = () => {
             console.log(data);
             console.log(data.name);
             setHeadline(data);
-            console.log(headline.name);
-            console.log(headline.length);
-            console.log(headline.weather[0].description);
+            //console.log(headline.name);
+            //console.log(headline.length);
+           // console.log(headline.weather[0].description);
 
             let response2 = await fetch(url2);  // Make the request to get data from
             let data2 = await response2.json(); // Convert response to JSON format
@@ -145,12 +145,31 @@ const Home = () => {
             </form>
             <br />
 
+            {/*###########################################################*/}
+
             {headline && headline.name && (
                 <h3 style={styles.form}>{headline.name}</h3>
             )}
             {headline && headline.weather[0].description && (
                 <h3 style={styles.form}>{headline.weather[0].description}</h3>
             )}
+            {headline && headline.main.temp && headline.main.feels_like && (
+                <h3 style={styles.form}>{headline.main.temp}°C, feels like {headline.main.feels_like}°C</h3>
+            )}
+
+
+
+            {headline.weather && headline.weather[0] && headline.weather[0].main === 'Clouds' ? (
+                <div style={styles.windy}>
+                    <img src="/assets/images/weather/windy.png" alt="windy" />
+                    <p className="wind">-</p>
+                </div>
+            ) : null}
+
+            {/*###########################################################*/}
+
+
+
 
             <p id="city-id" className="cityReceived" style={styles.form}></p>
 
