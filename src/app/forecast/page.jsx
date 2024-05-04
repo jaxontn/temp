@@ -6,7 +6,8 @@ import Link from 'next/link'; //ADDED
 const Home = () => {
     const [email, setEmail] = useState('');
     const [city, setCity] = useState(''); //ADDED 04052024
-    const [headline, setHeadline] = useState('');
+    const [headline, setHeadline] = useState(''); //ADDED 
+    const [forecast, setForecast] = useState(''); //ADDED
     const [loading, setLoading] = useState(false);
     const [purchaseData, setPurchaseData] = useState([]);
     const [totalPurchaseAmount, setTotalPurchaseAmount] = useState(0); // New state variable
@@ -38,6 +39,7 @@ const Home = () => {
             let response2 = await fetch(url2);  // Make the request to get data from
             let data2 = await response2.json(); // Convert response to JSON format
             console.log(data2);
+            setForecast(data2); //ADDED
             //if success false, set city-id as no records found
             //else if success true and data.data array is not empty,
             //display the city
