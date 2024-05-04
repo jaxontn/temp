@@ -6,6 +6,7 @@ import Link from 'next/link'; //ADDED
 const Home = () => {
     const [email, setEmail] = useState('');
     const [city, setCity] = useState(''); //ADDED 04052024
+    const [headline, setHeadline] = useState('');
     const [loading, setLoading] = useState(false);
     const [purchaseData, setPurchaseData] = useState([]);
     const [totalPurchaseAmount, setTotalPurchaseAmount] = useState(0); // New state variable
@@ -28,6 +29,11 @@ const Home = () => {
             let response = await fetch(url1);  // Make the request to get data from
             let data = await response.json(); // Convert response to JSON format
             console.log(data);
+            console.log(data.name);
+            setHeadline(data);
+            console.log(headline.name);
+            console.log(headline.length);
+            console.log(headline.weather[0].description);
 
             let response2 = await fetch(url2);  // Make the request to get data from
             let data2 = await response2.json(); // Convert response to JSON format
@@ -46,6 +52,7 @@ const Home = () => {
                     cityElement.style.padding = "10px";
                     //setPurchaseData(null);
                     setPurchaseData([]);
+                    setHeadline([]);
                 }
             } else {
 
@@ -64,6 +71,7 @@ const Home = () => {
                 if (data.success) {
 
                     //setPurchaseData(data.data);
+                    setHeadline(data);
                     // Sort the array so that items with 'redeemed: false' come first
                     const updatedPurchaseData = data.data.sort((a, b) => {
                         // If 'a.redeemed' is false and 'b.redeemed' is true, put 'a' first.
@@ -137,6 +145,13 @@ const Home = () => {
             </form>
             <br />
 
+            {headline && headline.name && (
+                <h3 style={styles.form}>{headline.name}</h3>
+            )}
+            {headline && headline.weather[0].description && (
+                <h3 style={styles.form}>{headline.weather[0].description}</h3>
+            )}
+
             <p id="city-id" className="cityReceived" style={styles.form}></p>
 
             {/* Display purchase data if there is data */}
@@ -186,7 +201,9 @@ const Home = () => {
 
 
             <div style={styles.display}>
-                    <p style={styles.cities}>City Name</p>
+                    {headline && headline.name && (
+                        <p style={styles.cities}>{headline.name}</p>
+                    )}
                     <h1>Current Weather</h1>
                     <div style={styles.weather}>
                         <img src="/assets/images/question-sign.png" alt="storm-img" className="weather-icon" />
